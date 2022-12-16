@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -6,10 +6,11 @@ import * as d3 from 'd3';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   data: any[];
-
+  constructor() { }
   ngOnInit() {
+    //d3 csv invokation can be replaced with API calls using d3 request.
     d3.csv(
       /*'https://raw.githubusercontent.com/bumbeishvili/sample-data/main/org.csv'*/
       '../assets/SampleDate.csv'
